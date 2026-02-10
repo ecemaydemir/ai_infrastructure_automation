@@ -1,4 +1,4 @@
-# Design and Implementation Report: AI-Supported Configuration Management System
+AI-Supported Configuration Management System
 
 ## 1. Model Selection and Design Approach
 
@@ -52,12 +52,12 @@ This structure eliminates the need for manual JSON editing.
 
 ## 4. Test Scenarios
 
-### Senaryo 1 — Chat Servisi
+### Scenario 1 — Chat Service
 
-**Komut:**  
+**Command:**  
 `set chat service maxUser to 150`
 
-**Sistem Yanıtı:**
+**System Response:**
 
 ```json
 {
@@ -71,12 +71,12 @@ This structure eliminates the need for manual JSON editing.
 
 ---
 
-### Senaryo 2 — Matchmaking Servisi
+### Scenario 2 — Matchmaking Service
 
-**Komut:**  
+**Commdan:**  
 `set matchmaking service waiting time to 3 minutes`
 
-**Sistem Yanıtı:**
+**System Response:**
 
 ```json
 {
@@ -90,12 +90,12 @@ This structure eliminates the need for manual JSON editing.
 
 ---
 
-### Senaryo 3 — Tournament Servisi
+### Scenario 3 — Tournament Service
 
-**Komut:**  
+**Commdand:**  
 `tournament prize pool should be 5000`
 
-**Sistem Yanıtı:**
+**Sistem Response:**
 
 ```json
 {
