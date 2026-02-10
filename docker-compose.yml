@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  # Yerel LLM Servisi
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+
+  # Şema Sağlayıcı Servis
+  schema-server:
+    build: ./schema-server
+    container_name: peak-schema-server
+    volumes:
+      - ./data:/app/data
+    ports:
+      - "5001:5001"
+
+  # Mevcut Değerleri Yöneten Servis
+  values-server:
+    build: ./values-server
+    container_name: peak-values-server
+    volumes:
+      - ./data:/app/data
+    ports:
+      - "5002:5002"
+
+  # Ana Bot Servisi 
+  bot-server:
+    build: ./bot-server
+    container_name: peak-bot-server
+    ports:
+      - "5005:5000" # Bilgisayardaki 5005 portu, konteynırın 5000'ine gider
+    depends_on:
+      - ollama
+      - schema-server
+      - values-server
+    environment:
+      - OLLAMA_HOST=ollama
+
+volumes:
+  ollama_data:
