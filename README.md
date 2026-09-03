@@ -1,5 +1,29 @@
 # AI-Supported Configuration Management System
 
+## Getting Started
+
+Requirements: Docker and Docker Compose.
+
+```bash
+docker compose up --build
+```
+
+On first run, the Ollama container starts without any model loaded — pull it once before sending requests:
+
+```bash
+docker exec -it ollama ollama pull phi3
+```
+
+Once all services are up, send a natural language configuration request to Bot-Server:
+
+```bash
+curl -X POST http://localhost:5005/process \
+  -H "Content-Type: application/json" \
+  -d '{"prompt": "set chat service maxUser to 150"}'
+```
+
+---
+
 ## 1. Model Selection and Design Approach
 
 In this project, a local language model was used to convert configuration requests written in natural language into a technical JSON format. **Phi-3** was chosen as the model and deployed locally via Ollama.
