@@ -13,7 +13,7 @@ services:
   # Şema Sağlayıcı Servis
   schema-server:
     build: ./schema-server
-    container_name: peak-schema-server
+    container_name: schema-server
     volumes:
       - ./data:/app/data
     ports:
@@ -22,7 +22,7 @@ services:
   # Mevcut Değerleri Yöneten Servis
   values-server:
     build: ./values-server
-    container_name: peak-values-server
+    container_name: values-server
     volumes:
       - ./data:/app/data
     ports:
@@ -31,7 +31,7 @@ services:
   # Ana Bot Servisi 
   bot-server:
     build: ./bot-server
-    container_name: peak-bot-server
+    container_name: bot-server
     ports:
       - "5005:5000" # Bilgisayardaki 5005 portu, konteynırın 5000'ine gider
     depends_on:

@@ -73,7 +73,7 @@ This structure eliminates the need for manual JSON editing.
 
 ### Scenario 2 — Matchmaking Service
 
-**Commdan:**  
+**Command:**  
 `set matchmaking service waiting time to 3 minutes`
 
 **System Response:**
@@ -92,10 +92,10 @@ This structure eliminates the need for manual JSON editing.
 
 ### Scenario 3 — Tournament Service
 
-**Commdand:**  
+**Command:**  
 `tournament prize pool should be 5000`
 
-**Sistem Response:**
+**System Response:**
 
 ```json
 {
